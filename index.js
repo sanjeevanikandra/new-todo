@@ -11,12 +11,13 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect(process.env.Uri)
+
+mongoose.connect(process.env.Uri, {'bufferTimeoutMS':5000})
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.log(err));
 
 
-
+  //  mongoose.set('bufferTimeoutMS', 5000);
 app.listen(process.env.Port, () => {
     console.log('Server is running on port 5000');
 });
