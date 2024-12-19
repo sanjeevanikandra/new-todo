@@ -1,0 +1,2 @@
+Port =5000
+Uri = mongodb+srv://mearnApp:mearnApp@cluster0.gl52s.mongodb.net/MernDb?retryWrites=true&w=majority&appName=Cluster0
