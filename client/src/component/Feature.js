@@ -5,7 +5,7 @@ function Feature({ data, getData }) {
   const [newTitle, setNewTitle] = useState(''); // Track the updated title
 
   const deleteData = async (id) => {
-    await fetch(`https://mern-ackend.vercel.app/${id}`, { method: 'DELETE' });
+    await fetch(`http://localhost:5050/${id}`, { method: 'DELETE' });
     getData(); // Refresh the todo list after deletion
   };
 
@@ -15,7 +15,7 @@ function Feature({ data, getData }) {
   };
 
   const saveEdit = async (id) => {
-    const response = await fetch(`https://mern-ackend.vercel.app/${id}`, {
+    const response = await fetch(`http://localhost:5050/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTitle }), // Send updated title

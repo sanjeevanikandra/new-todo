@@ -7,7 +7,7 @@ function Create() {
   const [data, setData] = useState([]); 
   // Function to fetch the todo list from the server
   const getData = async () => {
-    const response = await fetch('https://mern-ackend.vercel.app/');
+    const response = await fetch('http://localhost:5050/');
     const result = await response.json();
     setData(result);
   };
@@ -22,7 +22,7 @@ function Create() {
 
     const todos = { title }; 
 
-    const response = await fetch('https://mern-ackend.vercel.app/', {
+    const response = await fetch('http://localhost:5050/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
