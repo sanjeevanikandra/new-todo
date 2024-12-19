@@ -7,7 +7,7 @@ function Create() {
   const [data, setData] = useState([]); 
   // Function to fetch the todo list from the server
   const getData = async () => {
-    const response = await fetch('http://localhost:5050/');
+    const response = await fetch('https://new-todo-orpin.vercel.app/');
     const result = await response.json();
     setData(result);
   };
@@ -22,7 +22,7 @@ function Create() {
 
     const todos = { title }; 
 
-    const response = await fetch('http://localhost:5050/', {
+    const response = await fetch('https://new-todo-orpin.vercel.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
